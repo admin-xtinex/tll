@@ -1,0 +1,37 @@
+A01 Survivor rigged base
+Unity 6 URP import
+
+Files
+  A01_Survivor_RiggedBase.fbx   primary Unity mesh. Embedded PC textures.
+  A01_Survivor_RiggedBase.glb   same mesh for glTF tools.
+  T_A01_Survivor_*_PC.png       2048. Assign these on the Windows material.
+  T_A01_Survivor_*_Android.png  1024. Same UVs. Assign these on the Android material.
+
+Scale and axis
+  1 unit = 1 meter. Height 1.80 m. Feet on Y=0 in Unity (Z=0 in Blender).
+  FBX was exported with the Blender Unity preset: +Y up, character faces +Z.
+  Bind pose is an A-pose. Rig type in Unity: Humanoid.
+
+Meshes
+  SK_A01_Body         hood, coat, torso, sash, legs, boots, upper arms
+  SK_A01_Forearm_L    separate left forearm, elbow cuff, wrist cuff
+  SK_A01_Forearm_R    separate right forearm
+  SK_A01_Hand_L       block hand. A03 gloves replace or cover this later
+  SK_A01_Hand_R       block hand
+  ARM_A01_Survivor    Unity humanoid bone names
+
+Sockets (bone parented, follow the rig)
+  Socket_Glove_L      LeftHand
+  Socket_Glove_R      RightHand
+  Socket_Lantern_L    LeftLowerArm, outer side
+
+URP Lit material M_A01_Survivor
+  Base Map              T_A01_Survivor_BaseColor
+  Normal Map            T_A01_Survivor_Normal          (OpenGL, +Y green)
+  Metallic              T_A01_Survivor_MetallicSmoothness
+                        R = metallic, A = smoothness. Smoothness source: Metallic Alpha
+  Occlusion             T_A01_Survivor_Occlusion
+  No emission. The lantern is not part of A01.
+
+Do not merge the forearm meshes into the body. They are separate so the glove and lantern can mount on their own pieces.
+Triangles: 1340
